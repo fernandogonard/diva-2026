@@ -32,11 +32,7 @@ export default defineConfig({
     target: 'esnext',
     minify: 'terser',
     terserOptions: {
-      compress: {
-        drop_console: true, // Elimina console.log en prod
-        drop_debugger: true,
-        pure_funcs: ['console.log'],
-      },
+      compress: true,
       format: {
         comments: false,
       },
