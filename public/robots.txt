@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /.next
+Disallow: /node_modules
+Disallow: /*.json
+
+# Especificar User-Agent para Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+Sitemap: https://hoteldiva.com.ar/sitemap.xml
+Host: https://hoteldiva.com.ar
