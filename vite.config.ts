@@ -31,12 +31,6 @@ export default defineConfig({
     // Optimizar bundle
     target: 'esnext',
     minify: 'terser',
-    terserOptions: {
-      compress: true,
-      format: {
-        comments: false,
-      },
-    },
     
     // Code splitting estratégico
     rollupOptions: {
