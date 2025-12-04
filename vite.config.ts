@@ -5,13 +5,7 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          ['@babel/plugin-syntax-import-assertions', { version: 'November2023' }],
-        ],
-      },
-    }),
+    react(),
   ],
 
   // Path aliases para imports limpios
