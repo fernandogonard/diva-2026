@@ -160,3 +160,17 @@ export const NAVIGATION_ITEMS = [
   { name: 'Grupos', href: '#groups', path: '/grupos' },
   { name: 'Contacto', href: '#contact', path: '/contacto' },
 ] as const;
+
+// Campañas externas
+export const CAMPAIGNS = [
+  {
+    name: 'Semana Santa 2026',
+    url: 'https://hotel-diva-semana-santa.netlify.app/',
+    description: 'Paquete especial de 3 noches con desayuno incluido',
+  },
+  {
+    name: 'Evento COSAPRO 2026',
+    url: 'https://cosapro-hoteldiva.netlify.app/',
+    description: 'Alojamiento para asistentes del Congreso Provincial de Salud',
+  },
+] as const;

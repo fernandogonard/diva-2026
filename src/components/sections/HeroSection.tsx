@@ -29,7 +29,7 @@ function HeroSection() {
           alt="Hotel Diva Mar del Plata, fachada del hotel"
           width={1920}
           height={1080}
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           decoding="async"
           className="w-full h-full object-cover"

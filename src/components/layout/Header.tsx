@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
-import { NAVIGATION_ITEMS, HOTEL_INFO } from '../../constants';
+import { NAVIGATION_ITEMS, CAMPAIGNS, HOTEL_INFO } from '../../constants';
 import { formatPhoneDisplay } from '../../utils';
 import { useSmoothScroll } from '../../hooks';
 
@@ -83,6 +83,27 @@ function Header() {
               </Link>
             ))}
 
+            {/* Separator */}
+            <div className={`h-6 w-px ${isScrolled ? 'bg-secondary-300' : 'bg-white/30'}`}></div>
+
+            {/* Campaigns */}
+            {CAMPAIGNS.map((campaign) => (
+              <motion.a
+                key={campaign.name}
+                href={campaign.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                className={`font-medium transition-colors duration-300 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded px-2 py-1 text-sm ${
+                  isScrolled ? 'text-secondary-700' : 'text-white'
+                }`}
+                aria-label={`Ir a ${campaign.name}`}
+                title={campaign.description}
+              >
+                {campaign.name}
+              </motion.a>
+            ))}
+
             <motion.a
               href={`tel:${HOTEL_INFO.phone}`}
               className={`flex items-center gap-2 px-4 py-2 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${
@@ -142,6 +163,23 @@ function Header() {
                     {item.name}
                   </Link>
                 ))}
+
+                {/* Campaign Links Mobile */}
+                <div className="px-4 py-3 border-t border-secondary-200">
+                  <p className="text-xs uppercase text-secondary-500 font-semibold mb-2">Campañas</p>
+                  {CAMPAIGNS.map((campaign) => (
+                    <a
+                      key={campaign.name}
+                      href={campaign.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-2 py-2 text-sm text-secondary-700 hover:text-primary-600 hover:bg-primary-50"
+                      aria-label={`Ir a ${campaign.name}`}
+                    >
+                      → {campaign.name}
+                    </a>
+                  ))}
+                </div>
 
                 <a
                   href={`tel:${HOTEL_INFO.phone}`}
