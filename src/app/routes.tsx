@@ -7,6 +7,7 @@ const RoomsPage = lazy(() => import('../pages/RoomsPage'));
 const GalleryPage = lazy(() => import('../pages/GalleryPage'));
 const GroupsPage = lazy(() => import('../pages/GroupsPage'));
 const ContactPage = lazy(() => import('../pages/ContactPage'));
+const SemanaSantaPage = lazy(() => import('../pages/SemanaSanta').then(m => ({ default: m.SemanaSantaPage })));
 
 // Loading fallback
 function PageLoader() {
@@ -26,6 +27,7 @@ export function AppRoutes() {
         <Route path="/galeria" element={<GalleryPage />} />
         <Route path="/grupos" element={<GroupsPage />} />
         <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/semana-santa" element={<SemanaSantaPage />} />
         {/* 404 - Redirect to home */}
         <Route path="*" element={<HomePage />} />
       </Routes>
